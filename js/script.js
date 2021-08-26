@@ -6,6 +6,9 @@ const app = new Vue({
   el: '#app',
   data: {
     user,
+    contacts,
+    picUrl: './img/avatar',
   },
-  methods: {},
+  methods: {
+  },
 });

@@ -15,7 +15,9 @@
   <div id="app">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
+        <!-- Left Section -->
         <div id="left-section" class="col-4 p-0 bg-white">
+          <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
               <img src="./img/avatar_io.jpg" alt="avatar_io" class="h-75 rounded-circle">
@@ -27,7 +29,10 @@
               <i class="fas fa-ellipsis-v pe-4"></i>
             </div>
           </header>
+
+          <!-- Main -->
           <main>
+            <!-- Notifications -->
             <section id="notifications" class="d-flex align-items-center">
               <i class="fas fa-bell-slash mx-3 rounded-circle"></i>
               <div>
@@ -35,6 +40,7 @@
                 <a href="#" class="d-block">Attiva notifiche desktop</a>
               </div>
             </section>
+            <!-- Search -->
             <section id="search">
               <nav class="navbar navbar-light bg-light">
                 <form class="container-fluid">
@@ -47,15 +53,19 @@
                 </form>
               </nav>
             </section>
+            <!-- Contacts -->
             <section id="contacts">
-              <div class="contact d-flex align-content-center flex-wrap">
-                <img src="./img/avatar_1.jpg" alt="avatar_1" class="h-75 rounded-circle px-3">
-                <span>Michele</span>
+              <div v-for="(contact, index) in contacts" class="contact d-flex align-content-center flex-wrap">
+                <img :src="picUrl + contact.avatar + '.jpg'" :alt="'avatar' + contact.avatar" class="h-75 rounded-circle px-3">
+                <span>{{ contact.name }}</span>
               </div>
             </section>
           </main>
         </div>
+
+        <!-- Right Section -->
         <div id="right-section" class="col-8 p-0">
+          <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
               <img src="./img/avatar_1.jpg" alt="avatar_1" class="h-75 rounded-circle me-3">
@@ -70,6 +80,8 @@
               <i class="fas fa-ellipsis-v pe-4"></i>
             </div>
           </header>
+
+          <!-- Main -->
           <main>
             <section id="messages" class="container">
               <div class="row">
@@ -146,6 +158,8 @@
               <div>           
             </section>       
           </main>
+
+          <!-- Footer -->
           <footer class="d-flex align-items-center justify-content-around">
             <span><i class="far fa-smile"></i></span>
             <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
