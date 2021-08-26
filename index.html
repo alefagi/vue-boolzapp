@@ -15,13 +15,61 @@
   <div id="app">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
-        <div class="col-4">
-          <header>
-            <div class="user"></div>
-            <div class="actions"></div>
+        <div class="col-4 p-0">
+          <header class="d-flex justify-content-between ps-2">
+            <div class="user h-100 d-flex align-items-center">
+              <img src="./img/avatar_io.jpg" alt="avatar_io" class="h-75 rounded-circle">
+              <span>Nome Utente</span>
+            </div>
+            <div class="action h-100 d-flex align-items-center">
+              <i class="fas fa-circle-notch fa-2x pe-4"></i>
+              <i class="fas fa-comment-alt fa-2x pe-4"></i>
+              <i class="fas fa-ellipsis-v fa-2x pe-4"></i>
+            </div>
           </header>
+          <main>
+            <section id="notifications" class="d-flex align-items-center">
+              <i class="fas fa-bell-slash"></i>
+              <div>
+                <span>Ricevi notifiche di nuovi messaggi</span>
+                <a href="#" class="d-block">Attiva notifiche desktop</a>
+              </div>
+            </section>
+            <section id="search">
+              <nav class="navbar navbar-light bg-light">
+                <form class="container-fluid">
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-0" id="basic-addon1">
+                      <i class="fas fa-search"></i>
+                    </span>
+                    <input type="text" class="form-control border-0" placeholder="Cerca o inizia una nuova chat">
+                  </div>
+                </form>
+              </nav>
+            </section>
+          </main>
         </div>
-        <div class="col-8"></div>
+        <div class="col-8 p-0">
+          <header class="d-flex justify-content-between ps-2">
+            <div class="user h-100 d-flex align-items-center">
+              <img src="./img/avatar_1.jpg" alt="avatar_1" class="h-75 rounded-circle">
+              <div>
+                <span>Nome Utente</span>
+                <span class="d-block">Ultimo accesso oggi alle</span>
+              </div>
+            </div>
+            <div class="action h-100 d-flex align-items-center">
+              <i class="fas fa-search fa-2x pe-4"></i>
+              <i class="fas fa-paperclip fa-2x pe-4"></i>
+              <i class="fas fa-ellipsis-v fa-2x pe-4"></i>
+            </div>
+          </header>
+          <main>       
+          </main>
+          <footer>
+
+          </footer>
+        </div>
       </div>
     </div>
   </div>

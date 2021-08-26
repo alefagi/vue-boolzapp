@@ -12,3 +12,32 @@
   background-color: blue;
   height: 90%;
 }
+
+header {
+  height: 10%;
+  background-color: #eaeaea;
+}
+
+i.fas {
+  color: #b1b1b1;
+}
+
+span.d-block,
+a.d-block,
+#search input {
+  color: #6b739b;
+  font-size: 0.75rem;
+}
+
+#notifications {
+  height: 70px;
+  background-color: #8edafc;
+}
+
+i.fa-bell-slash {
+  background-color: #fff;
+  color: #8edafc;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 0 10px;
+}
