@@ -76,3 +76,11 @@ i.fa-bell-slash {
 #messages .offset-1 {
   background-color: #ffffff;
 }
+
+header .fas {
+  font-size: 1.5rem;
+}
+
+.message {
+  border-radius: 15px;
+}
