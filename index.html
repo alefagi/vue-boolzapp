@@ -15,7 +15,7 @@
   <div id="app">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
-        <div class="col-4 p-0">
+        <div id="left-section" class="col-4 p-0 bg-white">
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
               <img src="./img/avatar_io.jpg" alt="avatar_io" class="h-75 rounded-circle">
@@ -29,7 +29,7 @@
           </header>
           <main>
             <section id="notifications" class="d-flex align-items-center">
-              <i class="fas fa-bell-slash"></i>
+              <i class="fas fa-bell-slash mx-3 rounded-circle"></i>
               <div>
                 <span>Ricevi notifiche di nuovi messaggi</span>
                 <a href="#" class="d-block">Attiva notifiche desktop</a>
@@ -47,9 +47,15 @@
                 </form>
               </nav>
             </section>
+            <section id="contacts">
+              <div class="contact d-flex align-content-center flex-wrap">
+                <img src="./img/avatar_1.jpg" alt="avatar_1" class="h-75 rounded-circle px-3">
+                <span>Michele</span>
+              </div>
+            </section>
           </main>
         </div>
-        <div class="col-8 p-0">
+        <div id="right-section" class="col-8 p-0">
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
               <img src="./img/avatar_1.jpg" alt="avatar_1" class="h-75 rounded-circle">
@@ -66,8 +72,10 @@
           </header>
           <main>       
           </main>
-          <footer>
-
+          <footer class="d-flex align-items-center justify-content-around">
+            <span><i class="far fa-smile"></i></span>
+            <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+            <span><i class="fas fa-microphone"></i></span>
           </footer>
         </div>
       </div>
