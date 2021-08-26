@@ -1,19 +1,26 @@
+/* Utils */
 .ms-h-45px {
   height: 45px;
 }
 
+.ms-h-95vh {
+  height: 95vh;
+}
+
+.ms-text-secondary {
+  font-size: 0.7rem;
+  color: #6b739b;
+}
+
+
+/* Generics */
 #app {
   height: 100vh;
   background: linear-gradient(#128C7E 15%, #d9dbd6 15%);
 }
 
-#left-section.col-4 {
-  height: 95vh;
-}
-
-#right-section.col-8 {
-  height: 95vh;
-  background-image: url(".././img/mine.jpg");
+i {
+  color: #b1b1b1;
 }
 
 header {
@@ -21,17 +28,12 @@ header {
   background-color: #eaeaea;
 }
 
-i {
-  color: #b1b1b1;
+header .fas {
+  font-size: 1.5rem;
 }
 
-span.d-block,
-a.d-block,
-#search input {
-  color: #6b739b;
-  font-size: 0.7rem;
-}
 
+/* Left Section*/
 #notifications {
   height: 11vh;
   background-color: #8edafc;
@@ -52,6 +54,12 @@ i.fa-bell-slash {
   height: 11vh;
 }
 
+
+/* Right Section */
+#right-section.col-8 {
+  background-image: url(".././img/mine.jpg");
+}
+
 #right-section main {
   height: calc(95vh - 10vh - 50px);
   overflow-y: scroll;
@@ -68,10 +76,6 @@ i.fa-bell-slash {
   padding: 0 20px;
 }
 
-#right-section input {
-  font-size: 0.75rem;
-}
-
 #messages .offset-7 {
   background-color: #d5f9ba;
 }
@@ -80,14 +84,10 @@ i.fa-bell-slash {
   background-color: #ffffff;
 }
 
-header .fas {
-  font-size: 1.5rem;
-}
-
-.message {
+#messages .message {
   border-radius: 15px;
 }
 
-.message span.d-block {
+#messages .message span.d-block {
   color: #b6bfbb;
 }
