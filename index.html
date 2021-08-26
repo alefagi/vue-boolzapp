@@ -42,7 +42,7 @@
             </section>
             <!-- Search -->
             <section id="search">
-              <nav class="navbar navbar-light bg-light">
+              <nav class="navbar navbar-light bg-light ms-h-45px">
                 <form class="container-fluid">
                   <div class="input-group">
                     <span class="input-group-text bg-white border-0" id="basic-addon1">
@@ -55,7 +55,7 @@
             </section>
             <!-- Contacts -->
             <section id="contacts">
-              <div v-for="(contact, index) in contacts" class="contact d-flex align-content-center flex-wrap">
+              <div v-for="contact in contacts" class="contact d-flex align-content-center flex-wrap">
                 <img :src="picUrl + contact.avatar + '.jpg'" :alt="'avatar' + contact.avatar" class="h-75 rounded-circle px-3">
                 <span>{{ contact.name }}</span>
               </div>
@@ -162,7 +162,7 @@
           <!-- Footer -->
           <footer class="d-flex align-items-center justify-content-around">
             <span><i class="far fa-smile"></i></span>
-            <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
+            <input type="text" class="form-control border-0 h-75" placeholder="Scrivi un messaggio">
             <span><i class="fas fa-microphone"></i></span>
           </footer>
         </div>

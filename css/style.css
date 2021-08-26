@@ -1,19 +1,23 @@
+.ms-h-45px {
+  height: 45px;
+}
+
 #app {
   height: 100vh;
   background: linear-gradient(#128C7E 15%, #d9dbd6 15%);
 }
 
 #left-section.col-4 {
-  height: 800px;
+  height: 90vh;
 }
 
 #right-section.col-8 {
-  height: 800px;
+  height: 90vh;
   background-image: url(".././img/mine.jpg");
 }
 
 header {
-  height: 10%;
+  height: 10vh;
   background-color: #eaeaea;
 }
 
@@ -29,7 +33,7 @@ a.d-block,
 }
 
 #notifications {
-  height: 70px;
+  height: 11vh;
   background-color: #8edafc;
 }
 
@@ -40,17 +44,16 @@ i.fa-bell-slash {
 }
 
 #contacts {
-  height: 606px;
+  height: calc(90vh - 21vh - 45px);
   overflow-y: scroll;
 }
 
 .contact {
-  height: 70px;
-  background-color: #e9ebeb;
+  height: 11vh;
 }
 
 #right-section main {
-  height: 670px;
+  height: calc(90vh - 10vh - 50px);
   overflow-y: scroll;
 }
 
