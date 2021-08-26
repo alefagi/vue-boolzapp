@@ -3,11 +3,11 @@
   background: linear-gradient(#128C7E 15%, #d9dbd6 15%);
 }
 
-.col-4 {
+#left-section.col-4 {
   height: 800px;
 }
 
-.col-8 {
+#right-section.col-8 {
   height: 800px;
   background-image: url(".././img/mine.jpg");
 }
@@ -25,7 +25,7 @@ span.d-block,
 a.d-block,
 #search input {
   color: #6b739b;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 }
 
 #notifications {
@@ -67,4 +67,12 @@ i.fa-bell-slash {
 
 #right-section input {
   font-size: 0.75rem;
+}
+
+#messages .offset-7 {
+  background-color: #d5f9ba;
+}
+
+#messages .offset-1 {
+  background-color: #ffffff;
 }
