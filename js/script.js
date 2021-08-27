@@ -8,7 +8,11 @@ const app = new Vue({
     user,
     contacts,
     picUrl: './img/avatar',
+    currentUser: 0,
   },
   methods: {
+    setCurrentUser(index){
+      this.currentUser = index;
+    }
   },
 });
