@@ -2,6 +2,8 @@ console.log(Vue);
 
 Vue.config.devtools = true;
 
+dayjs.extend(dayjs_plugin_customParseFormat);
+
 const app = new Vue({
   el: '#app',
   data: {
@@ -17,7 +19,7 @@ const app = new Vue({
     },
     createMessage(index){
       let newMessage = {};
-      newMessage.date = new Date();
+      newMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
       newMessage.message = this.messageText;
       newMessage.status = 'sent';
       this.contacts[index].messages.push(newMessage);
