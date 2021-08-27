@@ -25,5 +25,14 @@ const app = new Vue({
       this.contacts[index].messages.push(newMessage);
       this.messageText = '';
     },
+    createAutoMessage(index){
+      setTimeout(() => {
+        let autoMessage = {};
+        autoMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
+        autoMessage.message = 'ok';
+        autoMessage.status = 'received';
+        this.contacts[index].messages.push(autoMessage);
+      }, 1000);
+    },
   },
 });
