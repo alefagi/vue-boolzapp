@@ -54,6 +54,9 @@ i.fa-bell-slash {
   height: 11vh;
 }
 
+.contact:hover {
+  background-color: #e9ebeb;
+}
 
 /* Right Section */
 #right-section.col-8 {

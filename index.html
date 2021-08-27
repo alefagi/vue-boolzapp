@@ -55,7 +55,7 @@
             </section>
             <!-- Contacts -->
             <section id="contacts">
-              <div v-for="contact in contacts" class="contact d-flex align-content-center flex-wrap border-top border-light">
+              <div v-for="contact in contacts" @click="contact.visible = false" class="contact d-flex align-content-center flex-wrap border-top border-light">
                 <img :src="`${picUrl+contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
                 <span>{{ contact.name }}</span>
               </div>
@@ -84,16 +84,10 @@
           <!-- Main -->
           <main>
             <section id="messages">
-              <div class="message-container sent">
-                <div class="message col-5 pt-3 pb-2 my-2">
-                  <span>ricordati di dare da mangiare al cane e rifare le lenzual</span>
-                  <span class="d-block text-end ms-text-secondary">10/01/2020 15:30:55</span> 
-                </div>
-              </div>
-              <div class="message-container received">
-                <div class="message col-5 pt-3 pb-2 my-2">
-                  <span>ricordati di dare da mangiare al cane e rifare le lenzual</span>
-                  <span class="d-block text-end ms-text-secondary">10/01/2020 15:30:55</span> 
+              <div v-for="item in contacts[2].messages" v-if="contacts[2].visible === false" class="message-container" :class="item.status">
+                <div class="message col-5 pt-3 px-3 pb-2 my-2">
+                  <span>{{ item.message }}</span>
+                  <span class="d-block text-end ms-text-secondary">{{ item.date }}</span> 
                 </div>
               </div>
             </section>       
