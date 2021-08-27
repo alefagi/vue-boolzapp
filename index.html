@@ -20,8 +20,8 @@
           <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
-              <img src="./img/avatar_io.jpg" alt="avatar_io" class="h-75 rounded-circle">
-              <span>Nome Utente</span>
+              <img :src="`${picUrl+user.avatar}.jpg`" :alt="user.name" class="h-75 rounded-circle">
+              <span>{{ user.name }}</span>
             </div>
             <div class="action h-100 d-flex align-items-center">
               <i class="fas fa-circle-notch pe-4"></i>
@@ -56,7 +56,7 @@
             <!-- Contacts -->
             <section id="contacts">
               <div v-for="contact in contacts" class="contact d-flex align-content-center flex-wrap border-top border-light">
-                <img :src="picUrl + contact.avatar + '.jpg'" :alt="'avatar' + contact.avatar" class="h-75 rounded-circle px-3">
+                <img :src="`${picUrl+contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
                 <span>{{ contact.name }}</span>
               </div>
             </section>
