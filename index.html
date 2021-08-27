@@ -96,7 +96,7 @@
           <!-- Footer -->
           <footer class="d-flex align-items-center justify-content-around">
             <span><i class="far fa-smile"></i></span>
-            <input type="text" class="form-control border-0 h-75 ms-text-secondary" placeholder="Scrivi un messaggio">
+            <input type="text" @keyup.enter="createMessage(currentUser)" v-model="messageText" class="form-control border-0 h-75 ms-text-secondary" placeholder="Scrivi un messaggio">
             <span><i class="fas fa-microphone"></i></span>
           </footer>
         </div>

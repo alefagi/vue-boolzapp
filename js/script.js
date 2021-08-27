@@ -9,10 +9,19 @@ const app = new Vue({
     contacts,
     picUrl: './img/avatar',
     currentUser: 0,
+    messageText: '',
   },
   methods: {
     setCurrentUser(index){
       this.currentUser = index;
-    }
+    },
+    createMessage(index){
+      let newMessage = {};
+      newMessage.date = new Date();
+      newMessage.message = this.messageText;
+      newMessage.status = 'sent';
+      this.contacts[index].messages.push(newMessage);
+      this.messageText = '';
+    },
   },
 });
