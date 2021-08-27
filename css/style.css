@@ -65,6 +65,38 @@ i.fa-bell-slash {
   overflow-y: scroll;
 }
 
+#messages {
+  padding: 5% 10%;
+}
+
+.message-container {
+  display: flex;
+}
+
+.sent {
+  justify-content: flex-end;
+}
+
+.received {
+  justify-content: flex-start;
+}
+
+.message-container.sent .message {
+  background-color: #d5f9ba;
+}
+
+.message-container.received .message {
+  background-color: #ffffff;
+}
+
+.message {
+  border-radius: 15px;
+}
+
+.message span.d-block {
+  color: #b6bfbb;
+}
+
 #right-section footer {
   height: 50px;
   background-color: #f3eeea;
@@ -74,20 +106,4 @@ i.fa-bell-slash {
 #right-section footer i {
   color: #6b7376;
   padding: 0 20px;
-}
-
-#messages .offset-7 {
-  background-color: #d5f9ba;
-}
-
-#messages .offset-1 {
-  background-color: #ffffff;
-}
-
-#messages .message {
-  border-radius: 15px;
-}
-
-#messages .message span.d-block {
-  color: #b6bfbb;
 }
