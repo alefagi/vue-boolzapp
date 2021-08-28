@@ -12,6 +12,8 @@ const app = new Vue({
     picUrl: './img/avatar',
     currentUser: 0,
     messageText: '',
+    searchedContact: '',
+    filteredContacts: contacts,
   },
   methods: {
     setCurrentUser(index){
@@ -33,6 +35,14 @@ const app = new Vue({
         autoMessage.status = 'received';
         this.contacts[index].messages.push(autoMessage);
       }, 1000);
+    },
+    searchContact(){
+      this.filteredContacts = this.contacts.filter((contact) => {
+        if(contact.name.toLowerCase().trim().includes(this.searchedContact.toLowerCase().trim())) {
+          return true;
+        }
+        return false;
+      });
     },
   },
 });

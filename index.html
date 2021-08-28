@@ -50,14 +50,14 @@
                     <span class="input-group-text bg-white border-0" id="basic-addon1">
                       <i class="fas fa-search"></i>
                     </span>
-                    <input type="text" class="form-control border-0 ms-text-secondary" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" v-model="searchedContact" @input="searchContact" class="form-control border-0 ms-text-secondary" placeholder="Cerca o inizia una nuova chat">
                   </div>
                 </form>
               </nav>
             </section>
             <!-- Contacts -->
             <section id="contacts">
-              <div v-for="(contact, index) in contacts" @click="setCurrentUser(index)" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">
+              <div v-for="(contact, index) in filteredContacts" @click="setCurrentUser(index)" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">
                 <img :src="`${picUrl+contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
                 <span>{{ contact.name }}</span>
               </div>
@@ -70,9 +70,9 @@
           <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
-              <img :src="`${picUrl + contacts[currentUser].avatar}.jpg`" alt="avatar_1" class="h-75 rounded-circle me-3">
+              <img :src="`${picUrl + filteredContacts[currentUser].avatar}.jpg`" alt="avatar_1" class="h-75 rounded-circle me-3">
               <div>
-                <span>{{ contacts[currentUser].name }}</span>
+                <span>{{ filteredContacts[currentUser].name }}</span>
                 <span class="d-block ms-text-secondary">Ultimo accesso oggi alle</span>
               </div>
             </div>
@@ -86,7 +86,7 @@
           <!-- Main -->
           <main>
             <section id="messages">
-              <div v-for="item in contacts[currentUser].messages" class="message-container" :class="item.status">
+              <div v-for="item in filteredContacts[currentUser].messages" class="message-container" :class="item.status">
                 <div class="message col-5 pt-3 px-3 pb-2 my-2">
                   <span>{{ item.message }}</span>
                   <span class="d-block text-end ms-text-secondary">{{ item.date }}</span> 
