@@ -73,7 +73,7 @@
               <img :src="`${picUrl + filteredContacts[currentUser].avatar}.jpg`" alt="avatar_1" class="h-75 rounded-circle me-3">
               <div>
                 <span>{{ filteredContacts[currentUser].name }}</span>
-                <span class="d-block ms-text-secondary">Ultimo accesso oggi alle</span>
+                <span class="d-block ms-text-secondary">Ultimo accesso: {{ getLastAccess(currentUser)}}</span>
               </div>
             </div>
             <div class="action h-100 d-flex align-items-center">

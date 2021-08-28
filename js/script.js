@@ -44,5 +44,14 @@ const app = new Vue({
         return false;
       });
     },
+    getLastAccess(index){
+      const sentMessages = this.contacts[index].messages.filter((item) => {
+        if(item.status === 'sent') {
+          return true;
+        }
+        return false;
+      });
+      return sentMessages[sentMessages.length-1].date;
+    },
   },
 });
