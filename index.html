@@ -57,7 +57,7 @@
             </section>
             <!-- Contacts -->
             <section id="contacts">
-              <div v-for="(contact, index) in contacts" @click="setCurrentUser(index)" class="contact d-flex align-content-center flex-wrap border-top border-light">
+              <div v-for="(contact, index) in contacts" @click="setCurrentUser(index)" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">
                 <img :src="`${picUrl+contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
                 <span>{{ contact.name }}</span>
               </div>

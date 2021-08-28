@@ -12,6 +12,10 @@
   color: #6b739b;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 
 /* Generics */
 #app {
