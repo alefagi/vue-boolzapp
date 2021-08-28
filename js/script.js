@@ -36,6 +36,7 @@ const app = new Vue({
         this.contacts[index].messages.push(autoMessage);
       }, 1000);
     },
+    // da correggere errore su ricerca lettere non presenti in contatto
     searchContact(){
       this.filteredContacts = this.contacts.filter((contact) => {
         if(contact.name.toLowerCase().trim().includes(this.searchedContact.toLowerCase().trim())) {
