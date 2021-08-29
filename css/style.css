@@ -3,8 +3,8 @@
   height: 45px;
 }
 
-.ms-h-95vh {
-  height: 95vh;
+.ms-h-90vh {
+  height: 90vh;
 }
 
 .ms-text-secondary {
@@ -20,7 +20,7 @@
 /* Generics */
 #app {
   height: 100vh;
-  background: linear-gradient(#128C7E 15%, #d9dbd6 15%);
+  background: linear-gradient(#128C7E 17%, #d9dbd6 17%);
 }
 
 i {
@@ -50,7 +50,7 @@ i.fa-bell-slash {
 }
 
 #contacts {
-  height: calc(95vh - 21vh - 45px);
+  height: calc(90vh - 21vh - 45px);
   overflow-y: auto;
 }
 
@@ -68,7 +68,7 @@ i.fa-bell-slash {
 }
 
 #right-section main {
-  height: calc(95vh - 10vh - 50px);
+  height: calc(90vh - 10vh - 50px);
   overflow-y: auto;
 }
 
