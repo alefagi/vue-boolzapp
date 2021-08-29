@@ -18,12 +18,12 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <!-- Left Section -->
-        <div id="left-section" class="col-4 p-0 bg-white ms-h-90vh shadow-lg">
+        <div id="left-section" class="col-4 p-0 bg-white ms-h-90vh ms-box-shadow">
           <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
-              <img :src="`${picUrl+user.avatar}.jpg`" :alt="user.name" class="h-75 rounded-circle">
-              <span>{{ user.name }}</span>
+              <img :src="`${picUrl+user.avatar}.jpg`" :alt="user.name" class="h-75 rounded-circle me-3">
+              <span class="ms-text-username">{{ user.name }}</span>
             </div>
             <div class="action h-100 d-flex align-items-center">
               <i class="fas fa-circle-notch pe-4"></i>
@@ -62,20 +62,20 @@
               </div>
               <div v-else v-for="(contact, index) in filteredContacts" @click="setCurrentUser(index)" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">           
                 <img :src="`${picUrl+contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
-                <span>{{ contact.name }}</span>
+                <span class="ms-text-username">{{ contact.name }}</span>
               </div>
             </section>
           </main>
         </div>
 
         <!-- Right Section -->
-        <div id="right-section" class="col-8 p-0 ms-h-90vh shadow-lg" v-if="filteredContacts.length">
+        <div id="right-section" class="col-8 p-0 ms-h-90vh ms-box-shadow" v-if="filteredContacts.length">
           <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
               <img :src="`${picUrl + filteredContacts[currentUser].avatar}.jpg`" alt="avatar_1" class="h-75 rounded-circle me-3">
               <div>
-                <span>{{ filteredContacts[currentUser].name }}</span>
+                <span class="ms-text-username">{{ filteredContacts[currentUser].name }}</span>
                 <span class="d-block ms-text-secondary">Ultimo accesso: {{ getLastAccess(currentUser)}}</span>
               </div>
             </div>
@@ -90,8 +90,8 @@
           <main>
             <section id="messages">
               <div v-for="item in filteredContacts[currentUser].messages" class="message-container" :class="item.status">
-                <div class="message col-5 pt-3 px-3 pb-2 my-2">
-                  <span>{{ item.message }}</span>
+                <div class="message pt-2 px-2 pb-1 my-2 ms-box-shadow">
+                  <span class="ms-text-primary">{{ item.message }}</span>
                   <span class="d-block text-end ms-text-secondary">{{ item.date }}</span> 
                 </div>
               </div>

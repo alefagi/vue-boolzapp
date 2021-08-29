@@ -7,6 +7,10 @@
   height: 90vh;
 }
 
+.ms-text-primary {
+  font-size: 0.9rem;
+}
+
 .ms-text-secondary {
   font-size: 0.7rem;
   color: #6b739b;
@@ -14,6 +18,14 @@
 
 .clickable {
   cursor: pointer;
+}
+
+.ms-text-username {
+  font-weight: 500;
+}
+
+.ms-box-shadow {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -33,7 +45,7 @@ header {
 }
 
 header .fas {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 
