@@ -49,8 +49,8 @@ const app = new Vue({
         }
         return false;
       });
-      console.log(this.filteredContacts);
-      console.log(this.currentUser);
+      console.log(this.filteredContacts); // da rimuovere
+      console.log(this.currentUser); // da rimuovere
       this.currentUser = 0;  // dovrei aver risolto resettando il currentUser a 0 in modo che nei filteredContacts si riparte da 0 come index
     },
     getLastAccess(index){
