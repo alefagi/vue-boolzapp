@@ -57,7 +57,10 @@
             </section>
             <!-- Contacts -->
             <section id="contacts">
-              <div v-for="(contact, index) in filteredContacts" @click="setCurrentUser(index)" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">
+              <div v-if="!filteredContacts.length" class="text-center">
+                <span>Nessuna corrispondenza trovata</span>
+              </div>
+              <div v-else v-for="(contact, index) in filteredContacts" @click="setCurrentUser(index)" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">           
                 <img :src="`${picUrl+contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
                 <span>{{ contact.name }}</span>
               </div>
@@ -66,7 +69,7 @@
         </div>
 
         <!-- Right Section -->
-        <div id="right-section" class="col-8 p-0 ms-h-95vh">
+        <div id="right-section" class="col-8 p-0 ms-h-95vh" v-if="filteredContacts.length">
           <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">

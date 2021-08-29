@@ -51,7 +51,7 @@ i.fa-bell-slash {
 
 #contacts {
   height: calc(95vh - 21vh - 45px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .contact {
@@ -69,7 +69,7 @@ i.fa-bell-slash {
 
 #right-section main {
   height: calc(95vh - 10vh - 50px);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #messages {

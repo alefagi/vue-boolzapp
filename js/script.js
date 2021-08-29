@@ -20,7 +20,7 @@ const app = new Vue({
       this.currentUser = index;
     },
     createMessage(index){
-      let newMessage = {};
+      const newMessage = {};
       newMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
       newMessage.message = this.messageText;
       newMessage.status = 'sent';
@@ -29,7 +29,7 @@ const app = new Vue({
     },
     createAutoMessage(index){
       setTimeout(() => {
-        let autoMessage = {};
+        const autoMessage = {};
         autoMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
         autoMessage.message = 'ok';
         autoMessage.status = 'received';
@@ -37,6 +37,7 @@ const app = new Vue({
       }, 1000);
     },
     // da correggere errore su ricerca lettere non presenti in contatto
+    // errrore compare quando dopo aver inserito la prima lettera, faccio click su un contatto, inserisco una seconda lettere che è presente
     searchContact(){
       this.filteredContacts = this.contacts.filter((contact) => {
         if(contact.name.toLowerCase().trim().includes(this.searchedContact.toLowerCase().trim())) {
