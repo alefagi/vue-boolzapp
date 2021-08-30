@@ -74,6 +74,10 @@ i.fa-bell-slash {
   background-color: #e9ebeb;
 }
 
+.active {
+  background-color: #e9ebeb;
+}
+
 /* Right Section */
 #right-section.col-8 {
   background-image: url(".././img/mine.jpg");
