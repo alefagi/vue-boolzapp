@@ -13,6 +13,7 @@ const app = new Vue({
     currentUser: 0,
     messageText: '',
     searchedContact: '',
+    foundedUser: [],
   },
   methods: {
     setCurrentUser(index) {
@@ -51,6 +52,12 @@ const app = new Vue({
           contact.visible = true;
         }
         else contact.visible =  false;
+      });
+      this.foundedUser = this.contacts.filter((contact) => {
+        if(contact.name.toLowerCase().trim().includes(this.searchedContact.toLowerCase().trim())) {
+          return true;
+        }
+        return false;
       });
     },
   },
