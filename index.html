@@ -70,7 +70,7 @@
           <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
-              <img :src="`${picUrl + contacts[currentUser].avatar}.jpg`" alt="avatar_1" class="h-75 rounded-circle me-3">
+              <img :src="`${picUrl + contacts[currentUser].avatar}.jpg`" :alt="contacts[currentUser].name" class="h-75 rounded-circle me-3">
               <div>
                 <span class="ms-text-username">{{ contacts[currentUser].name }}</span>
                 <span class="d-block ms-text-secondary">Ultimo accesso: {{ getLastAccess(currentUser)}}</span>
