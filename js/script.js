@@ -12,12 +12,13 @@ const app = new Vue({
     picUrl: './img/avatar',
     currentUser: 0,
     messageText: '',
+    searchedContact: '',
   },
   methods: {
-    setCurrentUser(index){
+    setCurrentUser(index) {
       this.currentUser = index;
     },
-    createMessage(index){
+    createMessage(index) {
       if(!this.messageText) return;
       const newMessage = {};
       newMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
@@ -35,7 +36,7 @@ const app = new Vue({
         this.contacts[index].messages.push(autoMessage);
       }, 1000);
     },
-    getLastAccess(index){
+    getLastAccess(index) {
       const sentMessages = this.contacts[index].messages.filter((item) => {
         if(item.status === 'sent') {
           return true;
@@ -43,6 +44,14 @@ const app = new Vue({
         return false;
       });
       return sentMessages[sentMessages.length-1].date;
+    },
+    searchContact() {
+      this.contacts.forEach((contact) => {
+        if(contact.name.toLowerCase().trim().includes(this.searchedContact.toLowerCase().trim())) {
+          contact.visible = true;
+        }
+        else contact.visible =  false;
+      });
     },
   },
 });

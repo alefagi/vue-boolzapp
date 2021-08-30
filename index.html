@@ -50,14 +50,14 @@
                     <span class="input-group-text bg-white border-0" id="basic-addon1">
                       <i class="fas fa-search"></i>
                     </span>
-                    <input type="text" class="form-control border-0 ms-text-secondary" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" v-model="searchedContact" @input="searchContact" class="form-control border-0 ms-text-secondary" placeholder="Cerca o inizia una nuova chat">
                   </div>
                 </form>
               </nav>
             </section>
             <!-- Contacts -->
             <section id="contacts">
-              <div v-for="(contact, index) in contacts" @click="setCurrentUser(index)" :class="currentUser === index ? 'active' : ''" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">           
+              <div v-for="(contact, index) in contacts" v-if="contact.visible" @click="setCurrentUser(index)" :class="currentUser === index ? 'active' : ''" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">           
                 <img :src="`${picUrl + contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
                 <span class="ms-text-username">{{ contact.name }}</span>
               </div>
