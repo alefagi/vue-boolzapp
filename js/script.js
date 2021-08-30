@@ -18,14 +18,15 @@ const app = new Vue({
       this.currentUser = index;
     },
     createMessage(index){
+      if(!this.messageText) return;
       const newMessage = {};
       newMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
       newMessage.message = this.messageText;
       newMessage.status = 'sent';
       this.contacts[index].messages.push(newMessage);
       this.messageText = '';
-    },
-    createAutoMessage(index){
+      
+      // metodo risposta automatica
       setTimeout(() => {
         const autoMessage = {};
         autoMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
