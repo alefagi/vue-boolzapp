@@ -59,7 +59,13 @@
             <section id="contacts">
               <div v-for="(contact, index) in contacts" v-if="contact.visible" @click="setCurrentUser(index)" :class="currentUser === index ? 'active' : ''" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">           
                 <img :src="`${picUrl + contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
-                <span class="ms-text-username">{{ contact.name }}</span>
+                <div class="d-flex flex-column justify-content-between"> 
+                  <span class="ms-text-username">{{ contact.name }}</span>
+                  <div>
+                    <div class="ms-text-secondary">{{ contact.messages[contact.messages.length-1].message.slice(0, 45) }}</div>
+                    <div class="ms-text-secondary">{{ contact.messages[contact.messages.length-1].date }}</div>
+                  </div>
+                </div>
               </div>
               <div v-if="!foundedUser.length" class="text-center p-3">
                 <span>Nessuna corrispondenza trovata</span>
