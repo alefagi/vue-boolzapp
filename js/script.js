@@ -13,7 +13,7 @@ const app = new Vue({
     currentUser: 0,
     messageText: '',
     searchedContact: '',
-    foundedUser: [],
+    foundedUser: contacts,
   },
   methods: {
     setCurrentUser(index) {
