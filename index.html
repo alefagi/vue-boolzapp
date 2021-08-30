@@ -50,17 +50,14 @@
                     <span class="input-group-text bg-white border-0" id="basic-addon1">
                       <i class="fas fa-search"></i>
                     </span>
-                    <input type="text" v-model="searchedContact" @input="searchContact" class="form-control border-0 ms-text-secondary" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" class="form-control border-0 ms-text-secondary" placeholder="Cerca o inizia una nuova chat">
                   </div>
                 </form>
               </nav>
             </section>
             <!-- Contacts -->
             <section id="contacts">
-              <div v-if="!filteredContacts.length" class="text-center p-3">
-                <span>Nessuna corrispondenza trovata</span>
-              </div>
-              <div v-else v-for="(contact, index) in filteredContacts" @click="setCurrentUser(index)" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">           
+              <div v-for="(contact, index) in contacts" @click="setCurrentUser(index)" class="contact clickable d-flex align-content-center flex-wrap border-top border-light">           
                 <img :src="`${picUrl + contact.avatar}.jpg`" :alt="contact.name" class="h-75 rounded-circle px-3">
                 <span class="ms-text-username">{{ contact.name }}</span>
               </div>
@@ -69,14 +66,13 @@
         </div>
 
         <!-- Right Section -->
-        <div id="right-section" class="col-8 p-0 ms-h-90vh ms-box-shadow" v-if="filteredContacts.length">
+        <div id="right-section" class="col-8 p-0 ms-h-90vh ms-box-shadow">
           <!-- Header -->
           <header class="d-flex justify-content-between ps-2">
             <div class="user h-100 d-flex align-items-center">
-              <!-- IL PROBLEMA è QUI -->
-              <img :src="`${picUrl + filteredContacts[currentUser].avatar}.jpg`" alt="avatar_1" class="h-75 rounded-circle me-3">
+              <img :src="`${picUrl + contacts[currentUser].avatar}.jpg`" alt="avatar_1" class="h-75 rounded-circle me-3">
               <div>
-                <span class="ms-text-username">{{ filteredContacts[currentUser].name }}</span>
+                <span class="ms-text-username">{{ contacts[currentUser].name }}</span>
                 <span class="d-block ms-text-secondary">Ultimo accesso: {{ getLastAccess(currentUser)}}</span>
               </div>
             </div>
@@ -90,7 +86,7 @@
           <!-- Main -->
           <main>
             <section id="messages">
-              <div v-for="item in filteredContacts[currentUser].messages" class="message-container" :class="item.status">
+              <div v-for="item in contacts[currentUser].messages" class="message-container" :class="item.status">
                 <div class="message pt-2 px-2 pb-1 my-2 ms-box-shadow">
                   <span class="ms-text-primary">{{ item.message }}</span>
                   <span class="d-block text-end ms-text-secondary">{{ item.date }}</span> 
