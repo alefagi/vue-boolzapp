@@ -14,10 +14,16 @@ const app = new Vue({
     messageText: '',
     searchedContact: '',
     foundedUser: contacts,
+    currentMessage: null,
+    isClicked: false,
   },
   methods: {
     setCurrentUser(index) {
       this.currentUser = index;
+    },
+    setCurrentMessage(index) {
+      this.currentMessage = index;
+      this.isClicked = !this.isClicked;
     },
     createMessage(index) {
       if(!this.messageText) return;
@@ -44,7 +50,10 @@ const app = new Vue({
         }
         return false;
       });
-      return sentMessages[sentMessages.length-1].date;
+      if(sentMessages.length) {
+        return sentMessages[sentMessages.length-1].date;
+      }
+      else return 'non disponibile';
     },
     searchContact() {
       this.contacts.forEach((contact) => {
@@ -60,5 +69,17 @@ const app = new Vue({
         return false;
       });
     },
+    getLastMessage(array, index) {
+      if(array.length) {
+        return array[index].message.slice(0, 45);
+      }
+      else return '';
+    },
+    getLastDate(array, index) {
+      if(array.length) {
+        return array[index].date;
+      }
+      else return '"nessun messaggio presente"';
+    }
   },
 });

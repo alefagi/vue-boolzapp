@@ -62,8 +62,8 @@
                 <div class="d-flex flex-column justify-content-between"> 
                   <span class="ms-text-username">{{ contact.name }}</span>
                   <div>
-                    <div class="ms-text-secondary">{{ contact.messages[contact.messages.length-1].message.slice(0, 45) }}</div>
-                    <div class="ms-text-secondary">{{ contact.messages[contact.messages.length-1].date }}</div>
+                    <div class="ms-text-secondary">{{ getLastMessage(contact.messages, contact.messages.length-1) }}</div>
+                    <div class="ms-text-secondary">{{ getLastDate(contact.messages, contact.messages.length-1) }}</div>
                   </div>
                 </div>
               </div>
@@ -95,11 +95,20 @@
           <!-- Main -->
           <main>
             <section id="messages">
-              <div v-for="item in contacts[currentUser].messages" class="message-container" :class="item.status">
-                <div class="message pt-2 px-2 pb-1 my-2 ms-box-shadow">
+              <div v-for="(item,index) in contacts[currentUser].messages" class="message-container" :class="item.status">
+                <div class="message clickable pt-2 px-2 pb-1 my-2 ms-box-shadow" @click="setCurrentMessage(index)">
                   <span class="ms-text-primary">{{ item.message }}</span>
                   <span class="d-block text-end ms-text-secondary">{{ item.date }}</span> 
+
+                  <ul class="dropdown-menu" :class="currentMessage === index && isClicked ? 'd-block' : ''">
+                    <li @click="contacts[currentUser].messages.splice(currentMessage, 1)"><a class="dropdown-item" href="#">Delete</a></li>
+                  </ul>
+                  
                 </div>
+
+
+                
+
               </div>
             </section>       
           </main>
