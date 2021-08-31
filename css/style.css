@@ -110,16 +110,46 @@ i.fa-bell-slash {
   justify-content: flex-start;
 }
 
+.message {
+  max-width: 40%;
+}
+
 .message-container.sent .message {
   background-color: #d5f9ba;
+  border-radius: 15px 0 15px 15px;
+}
+
+.message-container.sent .message:after {
+  content: '';
+	position: absolute;
+	left: 99%;
+	top: 0;
+	width: 10%;
+	height: 0;
+	border: 12px solid transparent;
+	border-left-color: #d5f9ba;
+	border-right: 0;
+	border-top: 0;
+	margin-right: -20px;
 }
 
 .message-container.received .message {
   background-color: #ffffff;
+  border-radius: 0 15px 15px 15px;
 }
 
-.message {
-  border-radius: 15px;
+.message-container.received .message:after {
+  content: '';
+	position: absolute;
+	right: 99%;
+	top: 0;
+	width: 10%;
+	height: 0;
+	border: 12px solid transparent;
+	border-right-color: #ffffff;
+	border-left: 0;
+	border-top: 0;
+	margin-left: -20px;
 }
 
 .message span.d-block {

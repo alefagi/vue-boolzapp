@@ -100,7 +100,7 @@
               <div v-if="!searchedText">
                 <div v-for="(item,index) in contacts[currentUser].messages" class="message-container" :class="item.status">
                   <div class="position-relative message clickable pt-2 px-2 pb-1 my-2 ms-box-shadow" @click="setCurrentMessage(index)">
-                    <span class="ms-text-primary">{{ item.message }}</span>
+                    <span class="ms-text-primary text-break">{{ item.message }}</span>
                     <span class="d-block text-end ms-text-secondary">{{ item.date }}</span>                 
 
                     <ul class="dropdown-menu position-absolute top-100 start-50 translate-middle" :class="currentMessage === index && isClicked ? 'd-block' : ''">
