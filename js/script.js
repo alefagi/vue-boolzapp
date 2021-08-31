@@ -50,7 +50,7 @@ const app = new Vue({
     },
     getLastAccess(index) {
       const sentMessages = this.contacts[index].messages.filter((item) => {
-        if(item.status === 'sent') {
+        if(item.status === 'received') {
           return true;
         }
         return false;
