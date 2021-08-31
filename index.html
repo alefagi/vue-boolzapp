@@ -75,9 +75,9 @@
         </div>
 
         <!-- Right Section -->
-        <div id="right-section" :class="(foundedUser.length && currentUser != null) ? 'primary-background' : 'secondary-background'"class="col-8 p-0 ms-h-90vh ms-box-shadow">
+        <div id="right-section" :class="currentUser != null ? 'primary-background' : 'secondary-background'"class="col-8 p-0 ms-h-90vh ms-box-shadow">
           <!-- Header -->
-          <header class="d-flex justify-content-between ps-2" v-if="foundedUser.length && currentUser != null">
+          <header class="d-flex justify-content-between ps-2" v-if="currentUser != null">
             <div class="user h-100 d-flex align-items-center">
               <img :src="`${picUrl + contacts[currentUser].avatar}.jpg`" :alt="contacts[currentUser].name" class="h-75 rounded-circle me-3">
               <div>
@@ -94,7 +94,7 @@
           </header>
 
           <!-- Main -->
-          <main v-if="foundedUser.length && currentUser != null">
+          <main v-if="currentUser != null">
             <section id="messages">
               <div v-for="(item,index) in contacts[currentUser].messages" class="message-container" :class="item.status">
                 <div class="position-relative message clickable pt-2 px-2 pb-1 my-2 ms-box-shadow" @click="setCurrentMessage(index)">
@@ -110,7 +110,7 @@
           </main>
 
           <!-- Footer -->
-          <footer class="d-flex align-items-center justify-content-around" v-if="foundedUser.length && currentUser != null">
+          <footer class="d-flex align-items-center justify-content-around" v-if="currentUser != null">
             <span><i class="far fa-smile"></i></span>
             <input type="text" v-model.trim="messageText" @keyup.enter="createMessage(currentUser)" class="form-control border-0 h-75 ms-text-secondary" placeholder="Scrivi un messaggio">
             <span><i class="fas fa-microphone"></i></span>
