@@ -13,14 +13,19 @@ const app = new Vue({
     currentUser: null,
     messageText: '',
     searchedContact: '',
-    foundedUser: contacts,
+    foundedContact: contacts,
     currentMessage: null,
     isClicked: false,
     isTyping: false,
+    searchedText: '',
+    foundedText: contacts,
+    searchInput: false,
   },
   methods: {
     setCurrentUser(index) {
       this.currentUser = index;
+      this.searchedText = '';
+      this.searchInput = false;
     },
     setCurrentMessage(index) {
       this.currentMessage = index;
@@ -67,7 +72,7 @@ const app = new Vue({
         }
         else contact.visible =  false;
       });
-      this.foundedUser = this.contacts.filter((contact) => {
+      this.foundedContact = this.contacts.filter((contact) => {
         if(contact.name.toLowerCase().trim().includes(this.searchedContact.toLowerCase().trim())) {
           return true;
         }
@@ -85,6 +90,14 @@ const app = new Vue({
         return array[index].date;
       }
       else return '"nessun messaggio presente"';
-    }
+    },
+    searchText() {
+      this.foundedText = this.contacts[this.currentUser].messages.filter((item) => {
+        if(item.message.toLowerCase().trim().includes(this.searchedText.toLowerCase().trim())) {
+          return true;
+        }
+        return false;
+      });
+    },
   },
 });

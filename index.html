@@ -67,7 +67,7 @@
                   </div>
                 </div>
               </div>
-              <div v-if="!foundedUser.length" class="text-center p-3">
+              <div v-if="!foundedContact.length" class="text-center p-3">
                 <span>Nessuna corrispondenza trovata</span>
               </div>
             </section>
@@ -87,7 +87,8 @@
               </div>
             </div>
             <div class="action h-100 d-flex align-items-center">
-              <i class="fas fa-search pe-4"></i>
+              <i class=" clickable fas fa-search pe-4" @click="searchInput = !searchInput"></i>
+              <input v-if="searchInput" type="text" v-model="searchedText" @input="searchText" class="me-4">
               <i class="fas fa-paperclip pe-4"></i>
               <i class="fas fa-ellipsis-v pe-4"></i>
             </div>
@@ -96,15 +97,27 @@
           <!-- Main -->
           <main v-if="currentUser != null">
             <section id="messages">
-              <div v-for="(item,index) in contacts[currentUser].messages" class="message-container" :class="item.status">
-                <div class="position-relative message clickable pt-2 px-2 pb-1 my-2 ms-box-shadow" @click="setCurrentMessage(index)">
-                  <span class="ms-text-primary">{{ item.message }}</span>
-                  <span class="d-block text-end ms-text-secondary">{{ item.date }}</span>                 
-                  
-                  <ul class="dropdown-menu position-absolute top-100 start-50 translate-middle" :class="currentMessage === index && isClicked ? 'd-block' : ''">
-                    <li @click="contacts[currentUser].messages.splice(currentMessage, 1)"><a class="dropdown-item" href="#">Delete</a></li>
-                  </ul>                    
+              <div v-if="!searchedText">
+                <div v-for="(item,index) in contacts[currentUser].messages" class="message-container" :class="item.status">
+                  <div class="position-relative message clickable pt-2 px-2 pb-1 my-2 ms-box-shadow" @click="setCurrentMessage(index)">
+                    <span class="ms-text-primary">{{ item.message }}</span>
+                    <span class="d-block text-end ms-text-secondary">{{ item.date }}</span>                 
+
+                    <ul class="dropdown-menu position-absolute top-100 start-50 translate-middle" :class="currentMessage === index && isClicked ? 'd-block' : ''">
+                      <li @click="contacts[currentUser].messages.splice(currentMessage, 1)"><a class="dropdown-item" href="#">Delete</a></li>
+                    </ul>                    
+                  </div>
                 </div>
+              </div>
+
+              <div v-else>
+                <div v-for="item in foundedText" class="message-container" :class="item.status">
+                  <div class="position-relative message pt-2 px-2 pb-1 my-2 ms-box-shadow">
+                    <span class="ms-text-primary">{{ item.message }}</span>
+                    <span class="d-block text-end ms-text-secondary">{{ item.date }}</span>               
+                  </div>
+                </div>
+                <div v-if="!foundedText.length" class="text-center p-3">Nessuna corrispondenza trovata</div>
               </div>
             </section>       
           </main>
