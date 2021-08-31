@@ -16,6 +16,7 @@ const app = new Vue({
     foundedUser: contacts,
     currentMessage: null,
     isClicked: false,
+    isTyping: false,
   },
   methods: {
     setCurrentUser(index) {
@@ -27,14 +28,15 @@ const app = new Vue({
     },
     createMessage(index) {
       if(!this.messageText) return;
+      const newMessage = {};
+      newMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
+      newMessage.message = this.messageText;
+      newMessage.status = 'sent';
+      this.contacts[index].messages.push(newMessage);
+      this.messageText = '';
       setTimeout(() => {
-        const newMessage = {};
-        newMessage.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
-        newMessage.message = this.messageText;
-        newMessage.status = 'sent';
-        this.contacts[index].messages.push(newMessage);
-        this.messageText = '';
-      }, 3000);
+        this.isTyping = true;
+      }, 2000);
       
       // metodo risposta automatica
       setTimeout(() => {
@@ -43,7 +45,8 @@ const app = new Vue({
         autoMessage.message = 'ok';
         autoMessage.status = 'received';
         this.contacts[index].messages.push(autoMessage);
-      }, 4000);
+        this.isTyping = false;
+      }, 3000);
     },
     getLastAccess(index) {
       const sentMessages = this.contacts[index].messages.filter((item) => {
