@@ -82,7 +82,8 @@
               <img :src="`${picUrl + contacts[currentUser].avatar}.jpg`" :alt="contacts[currentUser].name" class="h-75 rounded-circle me-3">
               <div>
                 <span class="ms-text-username">{{ contacts[currentUser].name }}</span>
-                <span class="d-block ms-text-secondary">Ultimo accesso: {{ getLastAccess(currentUser)}}</span>
+                <span class="d-block ms-text-secondary" v-if="!messageText">Ultimo accesso: {{ getLastAccess(currentUser)}}</span>
+                <span class="d-block ms-text-secondary" v-else>sta scrivendo...</span>
               </div>
             </div>
             <div class="action h-100 d-flex align-items-center">
@@ -102,13 +103,8 @@
 
                   <ul class="dropdown-menu" :class="currentMessage === index && isClicked ? 'd-block' : ''">
                     <li @click="contacts[currentUser].messages.splice(currentMessage, 1)"><a class="dropdown-item" href="#">Delete</a></li>
-                  </ul>
-                  
+                  </ul>               
                 </div>
-
-
-                
-
               </div>
             </section>       
           </main>
