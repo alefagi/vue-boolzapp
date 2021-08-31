@@ -79,8 +79,14 @@ i.fa-bell-slash {
 }
 
 /* Right Section */
-#right-section.col-8 {
+.primary-background {
   background-image: url(".././img/mine.jpg");
+}
+
+.secondary-background {
+  background-image: url("../img/whatsapp_bg.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 #right-section main {

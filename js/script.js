@@ -10,7 +10,7 @@ const app = new Vue({
     user,
     contacts,
     picUrl: './img/avatar',
-    currentUser: 0,
+    currentUser: null,
     messageText: '',
     searchedContact: '',
     foundedUser: contacts,
