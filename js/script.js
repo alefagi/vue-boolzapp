@@ -36,7 +36,7 @@ const app = new Vue({
       this.messageText = '';
       setTimeout(() => {
         this.isTyping = true;
-      }, 2000);
+      }, 1000);
       
       // metodo risposta automatica
       setTimeout(() => {
